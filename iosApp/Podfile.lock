@@ -1,0 +1,24 @@
+PODS:
+  - composeApp (1.0):
+    - OtplessBM/Core (= 1.1.3)
+  - OtplessBM/Core (1.1.3)
+
+DEPENDENCIES:
+  - composeApp (from `../composeApp`)
+  - OtplessBM/Core (= 1.1.3)
+
+SPEC REPOS:
+  trunk:
+    - OtplessBM
+
+EXTERNAL SOURCES:
+  composeApp:
+    :path: "../composeApp"
+
+SPEC CHECKSUMS:
+  composeApp: d901d73fd80309aba0981fc611ef5fb23361fbfc
+  OtplessBM: e252a6336799b10dcd96eee6a0860c00ffae033a
+
+PODFILE CHECKSUM: 572ddd44ae7d979f33bdd78a594be7ad86beaaf9
+
+COCOAPODS: 1.13.0
