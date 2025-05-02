@@ -11,4 +11,4 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
 
-To integrate Otpless Headless SDK in your CMP app, check out the documentation [here](https://otpless.com/docs/frontend-sdks/app-sdks/cmp/intro)
+To integrate Otpless Headless SDK in your CMP app, check out the documentation [here](https://otpless.com/docs/frontend-sdks/app-sdks/cmp/headless/intro)

@@ -3,7 +3,6 @@ package com.otpless.cmp.two
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -136,7 +135,7 @@ fun handleOtplessResponse(responseJsonString: String, onOTPAutoRead: (String) ->
                 if (getPlatformName().lowercase() == "android") {
                     handleVerifyErrorAndroid(responseJsonObject)
                 } else {
-                    handleInitiateErrorIos(responseJsonObject)
+                    handleVerifyErrorIos(responseJsonObject)
                 }
             }
         }
@@ -278,9 +277,9 @@ private fun handleInitiateErrorIos(responseJsonObject: JsonObject?) {
     }
 }
 
-private fun handleVerifyErrorIos(responseJsonObject: JsonObject) {
-    val errorCode = responseJsonObject["errorCode"]?.jsonPrimitive?.contentOrNull
-    val errorMessage = responseJsonObject["errorMessage"]?.jsonPrimitive?.contentOrNull ?: "Unknown error"
+private fun handleVerifyErrorIos(responseJsonObject: JsonObject?) {
+    val errorCode = responseJsonObject?.get("errorCode")?.jsonPrimitive?.contentOrNull
+    val errorMessage = responseJsonObject?.get("errorMessage")?.jsonPrimitive?.contentOrNull ?: "Unknown error"
 
     when (errorCode) {
         "7112" -> AppLogger.d("iOS OTPless Error: OTP is empty - $errorMessage")

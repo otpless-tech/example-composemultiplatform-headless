@@ -63,7 +63,6 @@ kotlin {
         framework {
             baseName = "composeApp"
             isStatic = true
-//            export(project(":composeApp"))
         }
 
         pod("OtplessBM/Core") {
